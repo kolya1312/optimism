@@ -1,0 +1,14 @@
+.terms-modal__container { position: fixed; width: 100%; height: 100%; inset: 0px; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(5px); z-index: 2; }
+@media screen and (max-width: 600px) {
+  .terms-modal__main-box { width: 90% !important; }
+}
+.terms-modal__main-box { position: absolute; top: 50%; left: 50%; width: 552px; background-color: var(--op-bg-card); transform: translate(-50%, -50%); padding: 32px 36px; color: var(--op-text-default); box-shadow: rgba(20, 23, 26, 0.12) 0px 8px 18px -6px, rgba(20, 23, 26, 0.12) 0px 12px 42px -4px; border-radius: 16px; }
+.terms-modal__main-box svg { font-size: 36px; }
+.terms-modal__main-box h1 { font-style: italic; font-weight: 700; color: var(--op-text-default); margin-top: 12px; font-size: 24px; margin-bottom: 16px; font-family: var(--op-font-family) !important; }
+.terms-modal__main-box p { font-size: 14px; margin-top: 8px; margin-bottom: -4px; }
+.terms-modal__main-box p a { font-weight: 700; cursor: pointer; color: var(--op-text-default); }
+.terms-modal__rules { padding: 0px; margin: 0px; list-style: none; }
+.terms-modal__rules li { display: flex; align-items: center; font-size: 14px; margin-bottom: 12px; }
+.terms-modal__rules li .terms-modal__rules-icon { height: 28px; width: 28px; padding: 8px; display: flex; align-items: center; justify-content: center; border-radius: 100px; background-color: var(--op-bg-card-hovered); margin-right: 12px; }
+.terms-modal__rules li .terms-modal__rules-icon svg { font-size: 14px; color: var(--op-primary-500); }
+.terms-modal__rules li a { font-weight: 700; cursor: pointer; color: var(--op-text-default); }
